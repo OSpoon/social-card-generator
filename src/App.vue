@@ -45,7 +45,7 @@ const cardData = ref<CardData>({
   title: '',
   description: '',
   avatar: 'https://avatars.githubusercontent.com/u/10126623?v=4',
-  theme: themes[4],
+  theme: themes[0],
   author: '小鑫同学',
   url: 'https://github.com/OSpoon',
   showQRCode: false
