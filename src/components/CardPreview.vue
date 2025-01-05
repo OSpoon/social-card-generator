@@ -286,8 +286,8 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
 }
 
 .qr-image {
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   padding: 2px;
   background: #FFFFFF;
   border-radius: calc(var(--border-radius) - 2px);
