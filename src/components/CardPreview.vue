@@ -26,12 +26,16 @@
             </div>
             <div 
               v-if="cardData.showQRCode && qrCodeDataUrl" 
+              class="qr-code-wrapper"
             >
               <img 
                 :src="qrCodeDataUrl"
                 alt="二维码"
                 class="qr-image"
               >
+              <span class="scan-text" :style="{ color: cardData.theme.textColor + '99' }">
+                扫码联系
+              </span>
             </div>
           </div>
           <div class="content-wrapper">
@@ -224,7 +228,7 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
 }
 
 .author-section {
-  height: 42px;
+  height: 48px;
   width: auto;
   display: flex;
   align-items: center;
@@ -237,8 +241,8 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
 }
 
 .author-avatar {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -259,7 +263,7 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
 
 .author-name {
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -268,39 +272,33 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
 }
 
 .qr-code-wrapper {
-  height: 34px;
-  width: 93px;
+  width: 48px;
+  height: 48px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 1px;
   background: rgba(255, 255, 255, 0.15);
-  padding: 0 8px;
+  padding: 5px;
   border-radius: var(--border-radius);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
 }
 
 .qr-image {
-  width: 32px;
-  height: 32px;
-  padding: 3px;
-  background: #FFFFFF; /* 固定白色背景 */
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  background: #FFFFFF;
   border-radius: calc(var(--border-radius) - 2px);
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.qr-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .scan-text {
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   white-space: nowrap;
+  font-family: 'Source Han Sans CN', sans-serif;
+  font-weight: 500;
 }
 
 .content-wrapper {
@@ -330,7 +328,8 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
   -webkit-line-clamp: 1;
   -moz-line-clamp: 1;
   line-clamp: 1;
-  font-family: 'Source Han Sans CN', sans-serif;
+  font-family: var(--font-heading);
+  font-weight: normal;
 }
 
 .description-container {
@@ -356,7 +355,7 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
   -moz-line-clamp: unset;
   line-clamp: unset;
   overflow: visible;
-  font-family: 'Source Han Sans CN', sans-serif;
+  font-family: var(--font-body);
   font-weight: normal;
 }
 
@@ -390,8 +389,8 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  font-family: 'Source Han Sans CN', sans-serif;
-  font-weight: 500;
+  font-family: var(--font-accent);
+  font-weight: normal;
   transition: opacity 0.2s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -435,7 +434,8 @@ const currentDate = new Intl.DateTimeFormat('zh-CN', {
   background: inherit;
   padding: 0 12px;
   font-size: 0.75rem;
-  font-family: 'Source Han Sans CN', sans-serif;
+  font-family: var(--font-accent);
+  font-weight: normal;
   backdrop-filter: blur(4px);
 }
 </style>
