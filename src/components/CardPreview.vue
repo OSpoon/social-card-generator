@@ -34,7 +34,7 @@
                 class="qr-image"
               >
               <span class="scan-text" :style="{ color: cardData.theme.textColor + '99' }">
-                扫码联系
+                扫码阅读
               </span>
             </div>
           </div>
