@@ -68,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch } from 'vue'
 import QRCode from 'qrcode'
 import html2canvas from 'html2canvas'
 import type { CardData } from '../types/card'
